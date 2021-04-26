@@ -1,9 +1,17 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App', () => {
+  it('should render the app\'s header', () => {
+    const app = render(<App />);
+    const header = app.container.querySelector('#header');
+    expect(header).toBeInTheDocument();
+  });
+
+  it('should render the app\'s footer', () => {
+    const app = render(<App />);
+    const footer = app.container.querySelector('#footer');
+    expect(footer).toBeInTheDocument();
+  });
 });

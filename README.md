@@ -1,46 +1,71 @@
-# Getting Started with Create React App
+# Coding Exercise - React Social Media
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository holds a simple web application written with ```React``` and ```Typescript```. The goal is to list a collection of posts fetched from a ```JSONPlaceholder``` API and when the user clicks on a post, list the related comments.
+The user can also add new comments that will be saved locally using a Redux store.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+1. Install dependencies with npm. ```npm install```
+3. Start the app by running ```npm start```
 
-### `npm start`
+## App Routes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The app contains the following routes:
+* ```/``` - Feed of the app where the posts are listed.
+* ```/**``` - 404 not found error page.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## External dependencies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The following dependencies were used to build the project:
 
-### `npm run build`
+```Typescript```: Used to add typing support to javascript.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```Redux```: Used to save new comments locally.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```Axios```: Used to perform HTTP requests in order to fetch data from the API.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```React Router```: Used to add routing support to React.
 
-### `npm run eject`
+```Bootstrap``` & ```React Bootstrap```: Used to provide CSS styles and components out of the box.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```Fontawesome```: Used for rendering icons.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## React components
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+ES6 components were used for route pages, and functional components were used for the remaining components of the app.
 
-## Learn More
+Here is a list of relevant components that were used to build the app.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* FeedPage
+    * PostThumbnail
+    * Post 
+       * CommentsSection
+         * Comment
+* NotFoundErrorPage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Services
+
+Two services were created to fetch data from the JSONPlaceholder API.
+
+* PostService
+* CommentService
+
+## Linting
+
+Linting for this project is provided by [ESLint](https://www.npmjs.com/package/eslint/) and [ESLint Typescript parser](https://www.npmjs.com/package/@typescript-eslint/parser). To lint the project run ```npm run lint```
+
+## Versioning
+
+This repository is versioned using [SemVer (Semantic Versioning)](https://semver.org/) and commits are formatted by using [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+
+## Testing
+
+Tests are written with ```Jest``` and ```React Testing Library```. ```Enzyme``` can't be used at the moment since there is no Typescript support for ```enzyme-adapter-react-17```.
+
+To run all the available tests run ```npm run test```
+
+## Author
+
+Nahuel Vazquez [(@netishix)](https://www.github.com/netishix)

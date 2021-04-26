@@ -1,0 +1,4 @@
+@import '../../styles/variables';
+header {
+  background-color: map_get($theme-colors, 'primary');
+}
